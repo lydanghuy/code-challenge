@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f1115;
+  --color-surface: #1c1f26;
+  --color-surface-hover: #2a2d36;
+  --color-primary: #8b5cf6;
+  --color-primary-hover: #7c3aed;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #9ca3af;
+  --color-error: #ef4444;
+  --color-success: #10b981;
+  --border-radius-xl: 1rem;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Glassmorphism utilities */
+.glass-panel {
+  background: rgba(28, 31, 38, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-input {
+  background: rgba(15, 17, 21, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus-within {
+  border-color: var(--color-primary);
+  background: rgba(15, 17, 21, 0.8);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+/* Hide scrollbar for select dropdowns */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
